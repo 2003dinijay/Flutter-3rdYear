@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TodoCard extends StatefulWidget {
-  String title;
-  bool isDone;
-  Function onTap;
-  Function delete;
+  final String title;
+  final bool isDone;
+  final Function onTap;
+  final Function delete;
 
   TodoCard({
     super.key,
