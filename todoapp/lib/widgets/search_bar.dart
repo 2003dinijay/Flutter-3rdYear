@@ -18,6 +18,6 @@ class SearchBarInput extends StatefulWidget {
 class _SearchBarInputState extends State<SearchBarInput> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return TextField();
   }
 }
