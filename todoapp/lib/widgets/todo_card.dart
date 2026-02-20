@@ -24,10 +24,11 @@ class _TodoCardState extends State<TodoCard> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: Colors.black,
+        color: Colors.purpleAccent,
       ),
 
       child: ListTile(
+        onTap: () => widget.onTap(),
         leading: widget.isDone
             ? Icon(Icons.check_box, color: Colors.green)
             : Icon(Icons.circle_outlined, color: Colors.white),

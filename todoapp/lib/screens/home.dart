@@ -11,10 +11,17 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final TextEditingController _searchController = TextEditingController();
+  bool _isGymDone = false;
 
   void _onSearch(String value) {
     print("Searching for: $value");
     // Add your search logic here
+  }
+
+  void _toggleGymTask() {
+    setState(() {
+      _isGymDone = !_isGymDone;
+    });
   }
 
   @override
@@ -48,10 +55,8 @@ class _HomeState extends State<Home> {
               const SizedBox(height: 20),
               TodoCard(
                 title: "GYM",
-                isDone: false,
-                onTap: () {
-                  print("Tapped on GYM");
-                },
+                isDone: _isGymDone,
+                onTap: _toggleGymTask,
                 delete: () {
                   print("Deleted");
                 },
