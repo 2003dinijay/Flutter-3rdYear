@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/screens/home.dart';
 
 void main() {
-  runApp(MaterialApp(home: Home(), debugShowCheckedModeBanner: false));
+  runApp(const MyApp());
 }
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.pinkAccent,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [Icon(Icons.menu), Icon(Icons.person)],
-        ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Todo App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.grey[200],
       ),
-      body: SafeArea(child: Placeholder()),
+      home: const Home(),
     );
   }
 }
