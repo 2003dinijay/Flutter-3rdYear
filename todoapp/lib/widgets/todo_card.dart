@@ -24,7 +24,7 @@ class _TodoCardState extends State<TodoCard> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: Colors.purpleAccent,
+        color: Colors.deepPurple,
       ),
 
       child: ListTile(
