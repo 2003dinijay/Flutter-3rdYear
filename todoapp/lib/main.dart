@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todoapp/screens/home.dart';
+import 'package:todoapp/screens/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.grey[200],
       ),
-      home: const Home(),
+      home: const SignUpPage(),
     );
   }
 }
