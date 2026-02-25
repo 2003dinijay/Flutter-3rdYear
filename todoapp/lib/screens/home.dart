@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:todoapp/widgets/todo_card.dart';
 import 'package:todoapp/widgets/search_bar.dart';
 import 'package:todoapp/models/todo.dart';
+import 'package:todoapp/widgets/app-button.dart';
+import 'package:todoapp/widgets/input-field.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -17,7 +19,6 @@ class _HomeState extends State<Home> {
 
   void _onSearch(String value) {
     print("Searching for: $value");
-    // Add your search logic here
   }
 
   void _toggleTodo(String id) {
@@ -122,14 +123,22 @@ class _HomeState extends State<Home> {
                   },
                 ),
               ),
+              const SizedBox(height: 12),
+              SearchBarInput(
+                textEditingController: _searchController,
+                searchData: _onSearch,
+              ),
+              const SizedBox(height: 12),
+              // ── AppButton ──
+              AppButton(
+                label: 'Add Todo',
+                icon: const Icon(Icons.add, color: Colors.white, size: 20),
+                onPressed: _addTodo,
+              ),
+              const SizedBox(height: 8),
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _addTodo,
-        backgroundColor: Colors.pinkAccent,
-        child: const Icon(Icons.add, color: Colors.white),
       ),
     );
   }
