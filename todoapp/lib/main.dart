@@ -22,42 +22,29 @@ import 'package:flutter/material.dart';
 //   }
 // }
 
-import 'dart:math';
 import 'package:flutter/material.dart';
+import 'screens/rock_paper_scissors.dart';
 
 void main() {
-  runApp(RockPaperScissorsApp());
+  runApp(const MyApp());
 }
 
-class RockPaperScissorsApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Rock Paper Scissors',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: GameScreen(),
+      debugShowCheckedModeBanner: false,
+      title: 'Todo App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.grey[200],
+      ),
+      home: RockPaperScissorsScreen(),
     );
   }
 }
-
-class GameOption {
-  final String name;
-  final IconData icon;
-  GameOption(this.name, this.icon);
-}
-
-class GameScreen extends StatefulWidget {
-  @override
-  _GameScreenState createState() => _GameScreenState();
-}
-
-class _GameScreenState extends State<GameScreen> {
-  final List<GameOption> choices = [
-    GameOption("Rock", Icons.sports_mma),
-    GameOption("Paper", Icons.description),
-    GameOption("Scissors", Icons.content_cut),
-  ];
-  String userChoice = "";
   String computerChoice = "";
   String resultMessage = "";
   int userScore = 0;
