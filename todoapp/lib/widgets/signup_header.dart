@@ -12,7 +12,7 @@ class SignupHeader extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF4BC8B8), Color(0xFF38A89D)],
+            colors: [Color(0xFF66E9F2), Color(0xFF5DC580)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
